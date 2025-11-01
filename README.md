@@ -1,5 +1,7 @@
 Module 11: Practical Application 2: What Drives the Price of a Car? 
+
 [Open Notebook on GitHub](https://github.com/rh2098ta/practicalapplication2/blob/main/practicalapplication2.ipynb)
+
 Datasource: Kaggle
 
 For this assignment, the goal was to figure out what makes some used cars worth more than others. I worked with the vehicles.csv dataset, which has millions of used car listings, and built a model to predict price based on things like vehicle type, fuel type, manufacturer, transmission, and mileage. I also followed the CRISP-DM (from the two documents assigned for this exceerise) process instead prior to my coding in GoogleCollab. The CRISP-DM forces you to think about the actual business problem first and for this assignment, helping used car dealers decide what kinds of cars are worth buying and reselling. I then was able to go step by step through understanding the data, cleaning it, building the model, and checking if the results make sense in real life.
