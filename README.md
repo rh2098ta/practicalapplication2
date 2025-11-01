@@ -10,8 +10,11 @@ The first step was reviewing the data and cleaning it up. There were a lot of mi
 
 <img width="1000" height="688" alt="image" src="https://github.com/user-attachments/assets/83e80011-b85c-4660-a3e3-747def4a8b53" />
 
-In the above we can see that the price distribution for used cars is heavily skewed to the right, meaning there are a lot more low-priced cars than high-priced ones. Most vehicles in the cleaned dataset fall between about $5,000 and $20,000, with a long tail of more expensive cars that go well above $40,000. 
+In the above we can see that the price distribution for used cars is heavily skewed to the right, meaning there are a lot more low-priced cars than high-priced ones. Most vehicles in the cl eaned dataset fall between about $5,000 and $20,000, with a long tail of more expensive cars that go well above $40,000. 
 
+<img width="1228" height="744" alt="image" src="https://github.com/user-attachments/assets/ecc31f0e-25d0-4684-a243-d8fec9aaab39" />
+
+The above scatter plot highlights the relationship between odometer mileage and price. Cars with higher mileage tend to sell for less. This supports the idea that mileage matters, but it isn’t enough on its own to predict value, which is why additional features like fuel type, vehicle type, and brand were included in the model.
 
 I started with linear regression as a baseline, and it was able to predict used car prices with a mean absolute error (MAE) of about $5,458 and an RMSE of about $7,290. That gave me a decent starting point, but the error was still high, so I moved on to a nonlinear model: Random Forest. After testing the model with cross-validation and doing a lightweight grid search to tune tree count, the Random Forest dropped the error to about $4,608 MAE and $6,296 RMSE. That means the Random Forest was around $850 more accurate per vehicle compared to linear regression, which is a meaningful difference for a dealership working with thousands of cars.
 
