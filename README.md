@@ -8,7 +8,7 @@ For this assignment, the goal was to figure out what makes some used cars worth 
 
 After cleaning up bad data (like missing prices or extreme outliers), I trained a regression model and got an average error of around $6,000 per car (MAE). That sounds high at first, but this dataset includes everything from old cheap cars to high-end trucks, so that level of error is expected and still good enough to spot real pricing patterns.
 
-Here’s what I found:
+Initial findings: 
 
 Trucks, pickups, and diesel cars sell for more — usually $3,500 to $4,500 above baseline. Regaring brands, American brands like GMC, RAM, and Ford also hold value better, adding about $1,000–$1,300. Through the analysis of the data, paint color mattered as well, such as white and black cars being priced higher on average. Types of cars mattered as well, including sedans and hatchbacks which were worth a lot less, with sedans dropping about $5,700. WHen comparing gas vs. diseal, analysis indicated that gas-cars were cheaper. With regards to deprecaition, brans such as Honda, Kia, Hyndai, and Nissan depreciated more than the tohers. 
 
@@ -21,6 +21,6 @@ Modeling: Trained a regression model that predicts car prices based on the selec
 Evaluation: Focused on the meaning of numbers for a dealership vs. just reporting metrics (output from the code).
 Deployment: Turned the results into practical recommendations
 
-Key Findings for Dealers: 
+Key Findings for Dealers:: 
 
 Based on the model’s results, the types of cars that hold the most value are diesel trucks and pickups, especially those from American brands like GMC, RAM, and Ford. These vehicles consistently showed the highest resale prices, and even details like paint color made a difference, with white and black vehicles selling for more on average. In contrast, sedans, hatchbacks, and gas-only cars tended to lose value much faster, especially those from manufacturers such as Honda, Kia, Hyundai, and Nissan. If a dealer wants to maximize profit, the data suggests prioritizing trucks and diesel vehicles in their inventory, while treating sedans and small gas-based cars as low-margin purchases that only make sense at a steep discount.
