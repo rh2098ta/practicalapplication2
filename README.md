@@ -4,23 +4,24 @@ Module 11: Practical Application 2: What Drives the Price of a Car?
 
 Datasource: Kaggle
 
-For this assignment, the goal was to figure out what makes some used cars worth more than others. I worked with the vehicles.csv dataset, which has millions of used car listings, and built a model to predict price based on things like vehicle type, fuel type, manufacturer, transmission, and mileage. I also followed the CRISP-DM (from the two documents assigned for this exceerise) process instead prior to my coding in GoogleCollab. The CRISP-DM forces you to think about the actual business problem first and for this assignment, helping used car dealers decide what kinds of cars are worth buying and reselling. I then was able to go step by step through understanding the data, cleaning it, building the model, and checking if the results make sense in real life.
+For this assignment, I needed to figure out what actually drives the price of a used car and turn that into something a dealer/dealershiop could use when deciding what vehicles to buy and how to price them. I worked with a large dataset of used car listings (including 3 million used cars) and followed the CRISP-DM process (after reading the two documents assigned). The CRISP-DM process helped me start with the business problem, understand the data, clean it, test different models, and then translate the results back into plain English for the people who would actually use them.
 
-After cleaning up bad data (like missing prices or extreme outliers), I trained a regression model and got an average error of around $6,000 per car (MAE). That sounds high at first, but this dataset includes everything from old cheap cars to high-end trucks, so that level of error is expected and still good enough to spot real pricing patterns.
+The first step was reviewing the data and cleaning it up. There were a lot of missing values (NaN), unrealistic prices, and other things that needed to be filtered out before modeling. After cleaning the dataset and keeping only the most useful features, including fuel type, brand, mileage, and vehicle age, I trained several models to estimate car prices.
 
-Initial findings: 
+I started with linear regression as a baseline, and it was able to predict used car prices with a mean absolute error (MAE) of about $5,458 and an RMSE of about $7,290. That gave me a decent starting point, but the error was still high, so I moved on to a nonlinear model: Random Forest. After testing the model with cross-validation and doing a lightweight grid search to tune tree count, the Random Forest dropped the error to about $4,608 MAE and $6,296 RMSE. That means the Random Forest was around $850 more accurate per vehicle compared to linear regression, which is a meaningful difference for a dealership working with thousands of cars.
 
-Trucks, pickups, and diesel cars sell for more — usually $3,500 to $4,500 above baseline. Regaring brands, American brands like GMC, RAM, and Ford also hold value better, adding about $1,000–$1,300. Through the analysis of the data, paint color mattered as well, such as white and black cars being priced higher on average. Types of cars mattered as well, including sedans and hatchbacks which were worth a lot less, with sedans dropping about $5,700. WHen comparing gas vs. diseal, analysis indicated that gas-cars were cheaper. With regards to deprecaition, brans such as Honda, Kia, Hyndai, and Nissan depreciated more than the tohers. 
 
-Using CRISP-DM -- 
 
-Business Understanding: Defined the real goal — help dealers make smarter buying decisions.
-Data Understanding: Explored the raw dataset and noticed missing and unrealistic values.
-Data Preparation: Cleaned the data, removed bad rows, fixed price and mileage issues, and selected useful features.
-Modeling: Trained a regression model that predicts car prices based on the selected variables.
-Evaluation: Focused on the meaning of numbers for a dealership vs. just reporting metrics (output from the code).
-Deployment: Turned the results into practical recommendations
+Once I had the best model, I looked at which features had the strongest effects on price. Trucks, diesel engines, and certain brands like GMC, RAM, and Ford showed up as some of the biggest price boosters, adding between $1,000 and $4,500 on average depending on the feature. Paint color even mattered more than I expected, with white and black cars pricing higher than others. On the low-end side, sedans were the biggest value drop, reducing price by about $5,700 on average. 
 
-Key Findings for Dealers:: 
+<img width="1394" height="828" alt="image" src="https://github.com/user-attachments/assets/44792d1f-97be-41ae-adf6-38123c69b368" />
 
-Based on the model’s results, the types of cars that hold the most value are diesel trucks and pickups, especially those from American brands like GMC, RAM, and Ford. These vehicles consistently showed the highest resale prices, and even details like paint color made a difference, with white and black vehicles selling for more on average. In contrast, sedans, hatchbacks, and gas-only cars tended to lose value much faster, especially those from manufacturers such as Honda, Kia, Hyundai, and Nissan. If a dealer wants to maximize profit, the data suggests prioritizing trucks and diesel vehicles in their inventory, while treating sedans and small gas-based cars as low-margin purchases that only make sense at a steep discount.
+
+Gas-only vehicles, small hatchbacks, and economy brands like Honda, Kia, Hyundai, and Nissan were also consistently cheaper in the market based on the model’s coefficients.
+
+<img width="1100" height="702" alt="image" src="https://github.com/user-attachments/assets/a08f4116-5007-4122-96e5-390ff728cde3" />
+
+
+Looking back at CRISP-DM, the phases actually lined up well with what I did. The business understanding phase made me define success not as “build the most accurate model possible” but “give a dealership information that changes how they buy and price cars.” Data understanding and preparation took the most time, as expected, because real datasets never start out clean. Modeling and evaluation were where I actually saw the trade-offs between simple, explainable models and more accurate but complex ones. The final “deployment” stage in this case doesn’t mean software — it just means delivering the results in a way a non-technical audience can understand and use.
+
+Overall, the main takeaway from the analysis is that vehicle type, fuel type, and brand matter a lot more than things like mileage alone. Trucks and diesel vehicles are pricing strong, while sedans and small gas cars clearly depreciate faster. The tuned Random Forest model is accurate enough to support pricing decisions within a few thousand dollars, which is acceptable in a market where prices can range from under $5,000 to over $50,000. If I were actually handing this off to a dealership, the recommendation would be to stock more diesel trucks and fewer sedans if the goal is to maximize resale value.
