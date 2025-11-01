@@ -8,6 +8,9 @@ For this assignment, I needed to figure out what actually drives the price of a 
 
 The first step was reviewing the data and cleaning it up. There were a lot of missing values (NaN), unrealistic prices, and other things that needed to be filtered out before modeling. After cleaning the dataset and keeping only the most useful features, including fuel type, brand, mileage, and vehicle age, I trained several models to estimate car prices.
 
+<img width="1000" height="688" alt="image" src="https://github.com/user-attachments/assets/83e80011-b85c-4660-a3e3-747def4a8b53" />
+
+
 I started with linear regression as a baseline, and it was able to predict used car prices with a mean absolute error (MAE) of about $5,458 and an RMSE of about $7,290. That gave me a decent starting point, but the error was still high, so I moved on to a nonlinear model: Random Forest. After testing the model with cross-validation and doing a lightweight grid search to tune tree count, the Random Forest dropped the error to about $4,608 MAE and $6,296 RMSE. That means the Random Forest was around $850 more accurate per vehicle compared to linear regression, which is a meaningful difference for a dealership working with thousands of cars.
 
 
