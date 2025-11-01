@@ -1,6 +1,7 @@
 Module 11: Practical Application 2: What Drives the Price of a Car? 
 
-[Open Notebook on GitHub](https://github.com/rh2098ta/practicalapplication2/blob/main/practicalapplication2.ipynb)
+[Open the Jupyter Notebook on GitHub → practicalapplication2.ipynb](https://github.com/rh2098ta/practicalapplication2/blob/main/practicalapplication2.ipynb)
+
 
 Datasource: Kaggle
 
